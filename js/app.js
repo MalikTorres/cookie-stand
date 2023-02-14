@@ -19,6 +19,7 @@ let seattle = {
   maxCust:65,
   avgCookieSale:6.3,
   cookiesPurchased:[],
+  sum:0,
   getCookiesPurchased: function() {
     for (let i = 0; i < hours.length; i++) {
       let numberOfCustomers = randomNumberOfCustomers(this.minCust,this.maxCust);
@@ -26,6 +27,7 @@ let seattle = {
       let numberOfCookies = Math.floor(numberOfCustomers * this.avgCookieSale);
       console.log(numberOfCookies);
       this.cookiesPurchased.push(numberOfCookies);
+      this.sum += numberOfCookies;
     }
   },//DOM MANIPULATION 
   render: function() {
@@ -45,11 +47,13 @@ let seattle = {
       ulElement.appendChild(liElement);
     }
 
+    let theSum = document.createElement('li');
+    theSum.textContent = `The daily total is ${this.sum} cookies`;
+    ulElement.appendChild(theSum); 
+
   }
 
 };
-
-
 
 
 let tokyo = {
@@ -58,11 +62,13 @@ let tokyo = {
   maxCust:24,
   avgCookieSale:1.2,
   cookiesPurchased:[],
+  sum:0,
   getCookiesPurchased: function() {
     for (let i = 0;i < hours.length;i++) {
       let numberOfCustomers = randomNumberOfCustomers(this.minCust,this.maxCust);
       let numberOfCookies = Math.floor(numberOfCustomers * this.avgCookieSale);
       this.cookiesPurchased.push(numberOfCookies);
+      this.sum += numberOfCookies;
     }
 
   },
@@ -82,7 +88,11 @@ let tokyo = {
       let liElement = document.createElement('li');
       liElement.textContent = `${hours[i]}: ${this.cookiesPurchased[i]} cookies`;
       ulElement.appendChild(liElement);
-    }
+    } 
+
+    let theSum = document.createElement('li');
+    theSum.textContent = `The daily total is ${this.sum} cookies`;
+    ulElement.appendChild(theSum); 
 
   }
 };
@@ -93,11 +103,13 @@ let dubai = {
   maxCust: 38,
   avgCookieSale: 3.7,
   cookiesPurchased: [],
+  sum:0,
   getCookiesPurchased: function() {
     for(let i = 0; i < hours.length; i++) {
       let numberOfCustomers = randomNumberOfCustomers(this.minCust,this.maxCust);
       let numberOfCookies = Math.floor(numberOfCustomers * this.avgCookieSale);
       this.cookiesPurchased.push(numberOfCookies);
+      this.sum += numberOfCookies;
     }
   },
   render: function() {
@@ -113,9 +125,14 @@ let dubai = {
 
     for(let i = 0; i < hours.length; i++) {
       let liElement = document.createElement('li');
-      liElement.textContent = `${hours[i]}: ${this.cookiesPurchased[i]} cookies`;
+      liElement.textContent = `${hours[i]}: ${this.cookiesPurchased[i]} cookies,`;
       ulElement.appendChild(liElement);
     }
+
+    let theSum = document.createElement('li');
+    theSum.textContent = `The daily total is ${this.sum} cookies`;
+    ulElement.appendChild(theSum);
+
   }
 };
 
@@ -125,12 +142,14 @@ let paris = {
   maxCust: 38,
   avgCookieSale: 2.3,
   cookiesPurchased:[],
+  sum:0,
   getCookiesPurchased: function () {
 
     for (let i = 0; i < hours.length; i++) {
       let numberOfCustomers = randomNumberOfCustomers(this.minCust,this.maxCust);
       let numberOfCookies = Math.floor(numberOfCustomers * this.avgCookieSale);
       this.cookiesPurchased.push(numberOfCookies);
+      this.sum += numberOfCookies;
     }
   },
   render: function() {
@@ -149,6 +168,10 @@ let paris = {
       liElement.textContent = `${hours[i]}: ${this.cookiesPurchased[i]} cookies`;
       ulElement.appendChild(liElement);
     }
+    let theSum = document.createElement('li');
+    theSum.textContent = `The daily sum is ${this.sum} cookies`;
+    ulElement.appendChild(theSum);
+
   }
 };
 
@@ -158,11 +181,13 @@ let lima = {
   maxCust: 16,
   avgCookieSale: 2.6,
   cookiesPurchased:[],
+  sum:0,
   getCookiesPurchased: function () {
     for (let i = 0; i < hours.length; i++) {
       let numberOfCustomers = randomNumberOfCustomers(this.minCust,this.maxCust);
       let numberOfCookies = Math.floor(numberOfCustomers * this. avgCookieSale);
       this.cookiesPurchased.push(numberOfCookies);
+      this.sum += numberOfCookies;
 
     }
   },
@@ -182,12 +207,17 @@ let lima = {
       liElement.textContent = `${hours[i]}: ${this.cookiesPurchased[i]} cookies`;
       ulElement.appendChild(liElement);
     }
+    let theSum = document.createElement('li');
+    theSum.textContent = `The daily sum is ${this.sum} cookies`;
+    ulElement.appendChild(theSum);
+
 
   }
 };
 
 seattle.getCookiesPurchased();
 seattle.render();
+console.log(seattle);
 tokyo.getCookiesPurchased();
 tokyo.render();
 dubai.getCookiesPurchased();
