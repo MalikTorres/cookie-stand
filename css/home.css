@@ -1,0 +1,130 @@
+body{
+  background-color: lavenderblush;
+
+}
+
+h1{
+  font-size:30px;
+  border: black  solid;
+  background-color: lightcoral ;
+  border-radius: 25px;
+  padding:20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: #fc0 1px 0 10px;
+  font-weight: 200px;
+ 
+}
+
+.navigation-container{
+  display: flex;
+  flex-direction: row;;
+  justify-content: space-evenly;
+  font-size: 25px;
+  margin-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: solid;
+  background-color:lightcoral ;
+  border-radius: 25px;
+  border-color: black ;
+  
+
+}
+
+a {
+  text-decoration: none!important; 
+  color:black;
+  text-shadow: #fc0 1px 0 10px;
+
+}
+
+img {
+  border: solid; 
+  margin-left: 100px;
+  margin-right: 100px;
+  
+}
+
+
+.first-child {
+  border:solid orange ;
+  padding:10px;
+  border-radius: 25px; 
+  background-color: lightcoral ;
+  
+}
+
+.second-child {
+  border:solid orange;
+  padding:10px;
+  border-radius: 25px; 
+  background-color: lightcoral ;
+} 
+
+.third-child {
+  border:solid orange;
+  padding:10px;
+  border-radius: 25px; 
+  background-color: lightcoral;
+}
+
+.first-images {
+  display:flex;
+  width:150px; 
+  height:150px;
+  flex-direction: row;
+  margin-top: 80px;
+  /* justify-content: space-around; */
+  /* margin-left: 300px; */
+} 
+
+
+
+.second-images {
+  display:flex;
+  width:100px;
+  height:100px;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  /* margin-left: 300px; */
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+} 
+/* 
+.popout{
+background: lightcoral;
+border-radius: 0px 3px 3px 0px;
+margin-top: 300px;
+height: 150px;
+width:40px;
+transition:1s all; 
+
+}
+popout:hover {
+  background:lightblue ;
+  width: 500px;
+} */
+
+footer {
+  /* display: flex;
+  align-items: baseline; */
+  margin-top: 400px;
+  margin-bottom:150px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  border:solid;
+  border-radius: 25px;
+  padding:20px;
+  text-shadow: #fc0 1px 0 10px;
+  font-weight: 200px;
+  background-color: lightcoral;
+  overflow: auto;
+} 
+
+ul {
+  /* margin-bottom: 300px; */
+  /* padding-bottom: 300px; */
+  /* overflow: auto; */
+
+}
