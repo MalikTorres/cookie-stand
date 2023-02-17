@@ -91,7 +91,7 @@ function header () {
 
 function footer () {
   // const data = document.createElement('tr');
-  // saleTables.appendChild(data);
+  // saleTables.appendChild(dataInfo);
   const dataInfo = document.createElement('tfoot');
   saleTables.appendChild(dataInfo);
   dataInfo.textContent = 'Complete Total';
