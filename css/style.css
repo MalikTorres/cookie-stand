@@ -59,11 +59,13 @@ div > table  {
    margin: 0 auto;
   /* display: block; */
    width: 50%;
+   border: solid;
 }  
 
 table td {
   border: 2px solid;
   padding: 10px; 
+  text-shadow: #fc0 1px 0 10px;
 }
 
 th, tr {
