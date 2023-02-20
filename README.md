@@ -7,7 +7,7 @@ I built a data model to calculate the average of cookies purchased per customer.
 
 
 
-![UpdatedLighthouse](new-lighthouse.png)
+![NewLighthouse](lighthouse.png)
 
 #### Author: Malik Sadiki-Torres
 
