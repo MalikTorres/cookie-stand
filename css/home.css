@@ -112,15 +112,26 @@ h3 {
   background-color: lightcyan ;
   text-shadow: #fc0 1px 0 10px;
 }
+
+
+p{
+border: solid black;
+margin-top: 50px;
+border-radius:28px;
+background-color: lightsalmon;
+text-shadow: #fc0 1px 0 10px;
+font-family:sans-serif;
+font-size: large;
+font-weight: 200px;
+}
 footer {
-  /* display: flex;
-  align-items: baseline; */
+  display: flex;
+  align-items: baseline;
   margin-top: 400px;
   margin-bottom:150px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 26px;
   border:solid;
-  border-radius: 25px;
   padding:20px;
   text-shadow: #fc0 1px 0 10px;
   font-weight: 200px;

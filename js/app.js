@@ -54,14 +54,13 @@ CookiesPerCustomer.prototype.getCookiesPurchased = function () {
 CookiesPerCustomer.prototype.render = function () {
   // TABLE
   const data = document.createElement('tr');//row
+  // tabel id brought in from the DOM
   saleTables.appendChild(data);
-  //let trElement = document.createElement('tr'); // tr === row
-  //articleElement.appendChild(articleElement);
   // th === cells attachs to rows
   const dataInfo = document.createElement('td');
   data.appendChild(dataInfo);
   dataInfo.textContent = this.name;
-  //data.appendChild(thElement);
+ 
   for(let i = 0; i < hours.length; i++) {
     let tdElement = document.createElement('td');
     tdElement.textContent = this.cookiesPurchased[i];
@@ -95,8 +94,10 @@ function footer () {
   const dataInfo = document.createElement('tfoot');
   saleTables.appendChild(dataInfo);
   dataInfo.textContent = 'Complete Total';
+  // takes in the final total of both array averages and does not reset on loop completion
   let finalTotal = 0;
   for(let i = 0; i < hours.length; i++) {
+    // resets the total on the inner loop to zero
     let sum = 0;
     for(let j = 0; j < cookieStore.length; j++) {
       // sum is storing object array at cookies purchased array
@@ -133,22 +134,26 @@ function submitFormHandler(event) {
   // console.log(avgCookieSale);
 
   let newStore = new CookiesPerCustomer(storeName,minCust,maxCust,avgCookieSale);
+  // pushing into the array with totals for each city
   cookieStore.push(newStore);
-  console.log(cookieStore);
-  // selects the element
-  const dataInfoTwo = document.querySelector('tfoot');
+  // console.log(cookieStore);
+  // dataInfoTwo is assigned to the footer selector
+  const dataInfoTwo = document.querySelector('tfoot'); //could do .remove();
+  // innerHTML references the content in the element
+  // assigning property to an empty string
   dataInfoTwo.innerHTML = '';
 
+  //calling method on newStore object
   newStore.randomNumberOfCustomers();
   newStore.getCookiesPurchased();
   newStore.render();
 
-
+  // recalling footer to input the field with new values added
   footer();
 
   myForm.reset();
 }
-
+// table function to include methods for all objects with new table included
 function makeTable () {
   for(let i = 0; i < cookieStore.length; i++) {
     cookieStore[i].randomNumberOfCustomers();
@@ -156,6 +161,7 @@ function makeTable () {
     cookieStore[i].render();
   }
 }
+// listening to the form
 myForm.addEventListener('submit',submitFormHandler);
 
 const seattle = new CookiesPerCustomer('Seattle',23,65,6.3);
@@ -166,8 +172,7 @@ const lima = new CookiesPerCustomer('Lima',2,16,2.6);
 
 cookieStore.push(seattle,tokyo,dubai,paris,lima);
 
-// WILL USE TO CALL ALL
-
+// calls header footer, header, and table
 function callAll(){
   header();
   makeTable();
@@ -177,32 +182,19 @@ function callAll(){
 callAll();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let allCities = [seattle,tokyo,dubai,paris,lima];
 
 
 
+//REMAINING CODE FROM TABLE
+//let trElement = document.createElement('tr'); // tr === row
+//articleElement.appendChild(articleElement);
 
 
 
 
 
-
-
-
+// OBJECT LITERALS
 //header();
 //callAll();
 //console.log(callAll());
@@ -245,9 +237,9 @@ callAll();
 //       this.cookiesPurchased.push(numberOfCookies);
 //       this.sum += numberOfCookies;
 //     }
-//   },//DOM MANIPULATION 
+//   },//DOM MANIPULATION
 //   render: function() {
-//     let articleElement = document.createElement('article'); 
+//     let articleElement = document.createElement('article');
 //     cookiesSection.appendChild(articleElement);
 
 //     let h2Element = document.createElement('h2'); // th === cells attachs to rows
@@ -265,7 +257,7 @@ callAll();
 
 //     let theSum = document.createElement('li'); // td
 //     theSum.textContent = `The daily total is ${this.sum} cookies`;
-//     ulElement.appendChild(theSum); 
+//     ulElement.appendChild(theSum);
 
 //   }
 
@@ -303,11 +295,11 @@ callAll();
 //       let liElement = document.createElement('li');
 //       liElement.textContent = `${hours[i]}: ${this.cookiesPurchased[i]} cookies`;
 //       ulElement.appendChild(liElement);
-//     } 
+//     }
 
 //     let theSum = document.createElement('li');
 //     theSum.textContent = `The daily total is ${this.sum} cookies`;
-//     ulElement.appendChild(theSum); 
+//     ulElement.appendChild(theSum);
 
 //   }
 // };
